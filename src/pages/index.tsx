@@ -24,21 +24,30 @@ export default function Home() {
   async function handleLogin(event: FormEvent){
     event.preventDefault();
 
+    if(email === '' || password === ''){
+      alert("PREENCHA OS DADOS")
+      return;
+    }
+
+    setLoading(true);
+
     let data = {
       email,
       password
     }
 
     await signIn(data)
+
+    setLoading(false);
   }
 
   return (
     <>
     <Head>
-      <title>Serve Ai - Faça seu login</title> 
+      <title>SujeitoPizza - Faça seu login</title> 
     </Head>
     <div className={styles.containerCenter}>
-      <Image src={logoImg} alt="Logo Serve Ai" />
+      <Image src={logoImg} alt="Logo Sujeito Pizzaria" />
 
       <div className={styles.login}>
         <form onSubmit={handleLogin}>
@@ -58,7 +67,7 @@ export default function Home() {
           
           <Button
             type="submit"
-            loading={false}
+            loading={loading}
           >
             Acessar
           </Button>
