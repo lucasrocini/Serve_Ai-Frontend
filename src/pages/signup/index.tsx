@@ -16,7 +16,7 @@ export default function SignUp() {
       <title>Faça seu cadastro agora!</title> 
     </Head>
     <div className={styles.containerCenter}>
-      <Image src={logoImg} alt="Logo Sujeito Pizzaria" />
+      <Image src={logoImg} alt="Logo Serve Ai" />
 
       <div className={styles.login}>
         <h1>Criando sua conta</h1>
@@ -45,7 +45,7 @@ export default function SignUp() {
           </Button>
         </form>
 
-        <Link href="/" legacyBehavior >
+        <Link legacyBehavior  href="/">
            <a className={styles.text}>Já possui uma conta? Faça login!</a>
         </Link>
 
