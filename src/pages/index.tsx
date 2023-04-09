@@ -14,6 +14,8 @@ import { AuthContext } from '../contexts/AuthContext'
 
 import Link from 'next/link';
 
+import { canSSRGuest } from '../utils/canSSRGuest'
+
 export default function Home() {
   const { signIn } = useContext(AuthContext)
 
@@ -45,10 +47,10 @@ export default function Home() {
   return (
     <>
     <Head>
-      <title>SujeitoPizza - Faça seu login</title> 
+      <title>Serve Ai - Faça seu login</title> 
     </Head>
     <div className={styles.containerCenter}>
-      <Image src={logoImg} alt="Logo Sujeito Pizzaria" />
+      <Image src={logoImg} alt="Logo Serve Ai" />
 
       <div className={styles.login}>
         <form onSubmit={handleLogin}>
@@ -74,7 +76,7 @@ export default function Home() {
           </Button>
         </form>
 
-        <Link legacyBehavior  href="/signup">
+        <Link legacyBehavior href="/signup">
            <a className={styles.text}>Nao possui uma conta? Cadastre-se</a>
         </Link>
 
@@ -83,3 +85,11 @@ export default function Home() {
     </>
   )
 }
+
+
+export const getServerSideProps = canSSRGuest(async (ctx) => {
+  
+  return {
+    props: {}
+  }
+})
