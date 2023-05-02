@@ -47,7 +47,7 @@ export default function Home() {
   return (
     <>
     <Head>
-      <title>Serve Ai - Faça seu login</title> 
+      <title>Serve_Ai - Faça seu login</title> 
     </Head>
     <div className={styles.containerCenter}>
       <Image src={logoImg} alt="Logo Serve Ai" />
@@ -76,7 +76,7 @@ export default function Home() {
           </Button>
         </form>
 
-        <Link legacyBehavior  href="/signup">
+        <Link legacyBehavior href="/signup">
            <a className={styles.text}>Nao possui uma conta? Cadastre-se</a>
         </Link>
 
